@@ -9,10 +9,10 @@ import java.util.List;
 @Repository
 public class UserRespositoryImp implements UserRepository{
 
-    private static final String CREATE_USER_QUERY="INSERT INTO user(id,fname,lname,email) values(?,?,?,?)";
-    private static final String EDIT_USER_QUERY="UPDATE user SET fname=? WHERE id=?";
-    private static final String SEARCH_USER_BY_ID_QUERY="SELECT * FROM user WHERE id=?";
-    private static final String DELETE_USER_BY_ID_QUERY="DELETE FROM user WHERE id=?";
+    private static final String CREATE_USER_QUERY="INSERT INTO user(Id,FirstName,LastName,Email) values(?,?,?,?)";
+    private static final String EDIT_USER_QUERY="UPDATE user SET FirstName=? WHERE Id=?";
+    private static final String SEARCH_USER_BY_ID_QUERY="SELECT * FROM user WHERE Id=?";
+    private static final String DELETE_USER_BY_ID_QUERY="DELETE FROM user WHERE Id=?";
     private static final String VIEW_USERS_QUERY="SELECT * FROM user";
 
     @Autowired
@@ -39,14 +39,14 @@ public class UserRespositoryImp implements UserRepository{
     @Override
     public User searchUser(int id) {
         return jdbcTemplate.queryForObject(SEARCH_USER_BY_ID_QUERY,(rs, rowNum) -> {
-            return new User(rs.getInt("id"),rs.getString("fname"), rs.getString("lname"),rs.getString("email") );
+            return new User(rs.getInt("Id"),rs.getString("FirstName"), rs.getString("LastName"),rs.getString("Email") );
         },id);
     }
 
     @Override
     public List<User> viewUser() {
         return jdbcTemplate.query(VIEW_USERS_QUERY,(rs, rowNum) -> {
-            return new User(rs.getInt("id"),rs.getString("fname"), rs.getString("lname"),rs.getString("email") );
+            return new User(rs.getInt("Id"),rs.getString("FirstName"), rs.getString("LastName"),rs.getString("Email") );
         });
     }
 }
