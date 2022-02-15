@@ -2,14 +2,14 @@ package com.example.springbootusermanagement.entity;
 
 public class User {
     private int id;
-    private String fname;
-    private String lname;
+    private String firstName;
+    private String lastName;
     private String email;
 
-    public User(int id, String fname, String lname, String email){
+    public User(int id, String firstName, String lastName, String email){
         this.id = id;
-        this.fname = fname;
-        this.lname = lname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
     }
 
@@ -21,20 +21,20 @@ public class User {
         this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

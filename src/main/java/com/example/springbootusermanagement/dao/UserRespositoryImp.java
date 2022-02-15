@@ -20,7 +20,7 @@ public class UserRespositoryImp implements UserRepository{
 
     @Override
     public User createUser(User user) {
-        jdbcTemplate.update(CREATE_USER_QUERY,user.getId(),user.getFname(),user.getLname(),user.getEmail());
+        jdbcTemplate.update(CREATE_USER_QUERY,user.getId(),user.getFirstName(),user.getLastName(),user.getEmail());
         return user;
 
     }
@@ -32,7 +32,7 @@ public class UserRespositoryImp implements UserRepository{
 
     @Override
     public User editUser(User user) {
-        jdbcTemplate.update(EDIT_USER_QUERY, user.getFname(),user.getId());
+        jdbcTemplate.update(EDIT_USER_QUERY, user.getFirstName(),user.getId());
         return user;
     }
 
