@@ -41,8 +41,8 @@ public class UserController {
     // delete user
     @RequestMapping(value = "/users/{id}",method = RequestMethod.DELETE)
     public void deleteUser(@PathVariable int id) throws  Exception{
-        userService.deleteUser(id);
         logger.trace("user deleted");
+        userService.deleteUser(id);
 
     }
 

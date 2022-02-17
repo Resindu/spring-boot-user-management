@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserRespositoryImp implements UserRepository{
+public class UserRepositoryImp implements UserRepository{
 
     private static final String CREATE_USER_QUERY="INSERT INTO user(Id,FirstName,LastName,Email) values(?,?,?,?)";
     private static final String EDIT_USER_QUERY="UPDATE user SET FirstName=? WHERE Id=?";
@@ -27,6 +27,7 @@ public class UserRespositoryImp implements UserRepository{
 
     @Override
     public void deleteUser(int id) {
+
         jdbcTemplate.update(DELETE_USER_BY_ID_QUERY,id);
     }
 
